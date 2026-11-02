@@ -1,0 +1,36 @@
+
+# Nexa
+
+> Nexa is a digital finance and commerce platform project by Novix.
+
+Official website: https://nexa-sd.github.io/
+GitHub: https://github.com/Nexa-sd
+
+## About
+
+Nexa is being developed as a connected digital platform focused on digital wallets, peer-to-peer trading, and digital commerce.
+
+## Main Areas
+
+- Digital Wallet: Balance management and digital transactions.
+- P2P Trading: Peer-to-peer trading workflows.
+- Digital Marketplace: Digital products, stores, and orders.
+- Digital Transfers: User-to-user transfer functionality.
+- Blockchain: Planned integration with TRON, BNB Smart Chain, and Polygon.
+
+## Technology
+
+- Backend: Python and FastAPI.
+- Database: PostgreSQL.
+- Frontend: Flet.
+- Infrastructure: Linux VPS.
+
+## Organization
+
+Novix is the technology brand behind the Nexa project.
+
+## Project Status
+
+Nexa is under active development. Features and integrations may change as development progresses.
+
+For current project information, visit the official website and GitHub repository.
