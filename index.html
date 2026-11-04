@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0f">
+  <meta name="description" content="Nexa by Novix is a digital finance platform in development, bringing together a digital wallet, P2P trading, and a digital marketplace.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="hIow_icEzM-S-vpyqI45RVVJD2uQRcPjDZuwbuktcxM">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nexa — Your Digital World. One Platform.">
+  <meta property="og:description" content="Explore the vision for Nexa, a digital wallet and connected financial platform by Novix.">
+  <meta property="og:url" content="https://nexa-sd.github.io/">
+
+  <link rel="canonical" href="https://nexa-sd.github.io/">
+
+  <title>Nexa | Digital Wallet & Financial Platform by Novix</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b0f;
+      --surface: #12151b;
+      --surface2: #171b22;
+      --text: #f6f6f3;
+      --muted: #a6aab2;
+      --gold: #e5bb61;
+      --line: #2b2c2c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #090b0fe8;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #242629;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navlinks a {
+      font-size: 14px;
+      color: #d6d6d7;
+    }
+
+    .navlinks a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 115px 0 108px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 80% 12%, #4a351627, transparent 55%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.1;
+      letter-spacing: -2.6px;
+      margin: 20px 0;
+      max-width: 830px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .lead {
+      max-width: 670px;
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid #4a4233;
+      transition: transform .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: var(--gold);
+      color: #16120b;
+      border-color: var(--gold);
+    }
+
+    .secondary {
+      color: var(--gold);
+      background: #e5bb610c;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 32px;
+      color: #c5c4bf;
+      font-size: 13px;
+      border: 1px solid #4a4233;
+      border-radius: 30px;
+      padding: 7px 13px;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      background: linear-gradient(145deg, var(--surface2), var(--surface));
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 27px;
+      min-height: 210px;
+    }
+
+    .symbol {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 11px;
+      background: #e5bb6115;
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      font-size: 19px;
+      margin: 17px 0 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .soft {
+      background: #101319;
+      border-top: 1px solid #1f2329;
+      border-bottom: 1px solid #1f2329;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .split h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin: 12px 0 20px;
+    }
+
+    .split p {
+      color: var(--muted);
+    }
+
+    .panel {
+      background: linear-gradient(155deg, #272013, #11151a 70%);
+      border: 1px solid #594a2c;
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .panel strong {
+      display: block;
+      color: var(--gold);
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    .panel p {
+      color: #c8c7c2;
+    }
+
+    .panel small {
+      color: #c5a76b;
+      letter-spacing: 1px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tech span {
+      border: 1px solid #42403a;
+      border-radius: 7px;
+      padding: 7px 13px;
+      color: #d7d3c9;
+      font-size: 13px;
+    }
+
+    .notice {
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      background: #e5bb610a;
+      color: #d6d2c8;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer a {
+      color: var(--gold);
+    }
+
+    @media(max-width:760px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .navlinks {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 82px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.4px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .feature {
+        min-height: 0;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Nexa home">NEXA</a>
+
+      <div class="navlinks">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#technology">Technology</a>
+        <a href="#security">Security</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero" id="home">
+      <div class="wrap">
+
+        <div class="eyebrow">A digital platform by Novix</div>
+
+        <h1>
+          Your Digital World.<br>
+          <span>One Platform.</span>
+        </h1>
+
+        <p class="lead">
+          Meet Nexa: a financial technology project bringing digital wallets,
+          peer-to-peer trading and digital commerce together in one connected experience.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#features">Explore Nexa</a>
+
+          <a class="btn secondary"
+             href="https://github.com/Nexa-sd"
+             target="_blank"
+             rel="noopener noreferrer">
+            Visit GitHub
+          </a>
+        </div>
+
+        <div class="status">
+          ● Currently in development — not a live financial service
+        </div>
+
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="wrap">
+
+        <div class="section-head">
+          <div class="eyebrow">Platform vision</div>
+
+          <h2>One connected digital experience</h2>
+
+          <p>
+            Discover the capabilities Nexa is building and exploring.
+            Availability will depend on development, testing and applicable requirements.
+          </p>
+        </div>
+
+        <div class="grid">
+
+          <article class="feature">
+            <div class="symbol">◈</div>
+            <h3>Digital Wallet</h3>
+            <p>
+              A unified experience for account balances, transfers and financial activity.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="symbol">⇄</div>
+            <h3>P2P Trading</h3>
+            <p>
+              A planned peer-to-peer marketplace with order management and escrow-oriented workflows.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="symbol">▦</div>
+            <h3>Digital Marketplace</h3>
+            <p>
+              A place to discover and purchase digital goods and services within the Nexa ecosystem.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="symbol">↗</div>
+            <h3>Digital Transfers</h3>
+            <p>
+              Designed around clear transfer flows, transaction records and account visibility.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="symbol">≡</div>
+            <h3>Transaction History</h3>
+            <p>
+              A structured history of account activity, with traceability as a design priority.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="symbol">◎</div>
+            <h3>Connected Services</h3>
+            <p>
+              A long-term vision for bringing useful digital services together in one application.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="soft">
+      <div class="wrap split">
+
+        <div>
+          <div class="eyebrow">About Nexa</div>
+
+          <h2>
+            Built with ambition.<br>
+            Designed for connection.
+          </h2>
+
+          <p>
+            Nexa is a financial technology project developed under Novix.
+            Its goal is to create a coherent digital experience across
+            payments-related workflows, commerce and connected services.
+          </p>
+
+          <p>
+            The platform is under active development. This website introduces
+            the project and its direction; it does not offer live wallet accounts,
+            deposits, withdrawals or investment services.
+          </p>
+        </div>
+
+        <div class="panel">
+          <small>THE PROJECT</small>
+          <strong>NEXA</strong>
+
+          <p>Digital finance • P2P • Marketplace</p>
+
+          <hr style="border:0;border-top:1px solid #53452e;margin:24px 0">
+
+          <small>DEVELOPED BY</small>
+          <strong style="font-size:22px">NOVIX</strong>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="technology">
+      <div class="wrap split">
+
+        <div>
+          <div class="eyebrow">Technology</div>
+
+          <h2>Engineered for a scalable foundation</h2>
+
+          <p>
+            Nexa's backend work uses Python and FastAPI with PostgreSQL.
+            The project also explores a Python-based application interface
+            and infrastructure deployed on Linux servers.
+          </p>
+
+          <p>
+            Blockchain integrations such as TRON, BNB Smart Chain and Polygon
+            are part of the development roadmap, not a claim of currently
+            available network support.
+          </p>
+
+          <div class="tech">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>Flet</span>
+            <span>Linux</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <small>DEVELOPMENT APPROACH</small>
+
+          <h3 style="font-size:26px;margin:12px 0">
+            Build. Test. Improve.
+          </h3>
+
+          <p>
+            Modular services, transaction integrity, authentication,
+            auditability and careful release planning are central
+            to the project's engineering direction.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="security" class="soft">
+      <div class="wrap">
+
+        <div class="section-head">
+          <div class="eyebrow">Security first</div>
+
+          <h2>Trust requires more than promises</h2>
+
+          <p>
+            Nexa's design priorities include protecting accounts,
+            handling transactions carefully and keeping meaningful records.
+          </p>
+        </div>
+
+        <div class="notice">
+          Nexa is still in development. Security work, testing and applicable
+          regulatory obligations must be completed before any public financial launch.
+          No claim of independent certification or regulatory approval is made here.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+
+      <span>© 2026 Nexa by Novix. All rights reserved.</span>
+
+      <span>
+        <a href="https://github.com/Nexa-sd"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        ·
+
+        <a href="https://nexa-sd.github.io/">
+          Official website
+        </a>
+      </span>
+
+    </div>
+  </footer>
+
+</body>
+            </html>
